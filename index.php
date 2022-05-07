@@ -1,3 +1,12 @@
+<?php
+    require('config/db_config.php');
+
+    $sql = "SELECT * FROM `announcements`";
+    $result = mysqli_query($link, $sql);
+    $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+?>
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -34,36 +43,6 @@
 
     <header>
         <div class="header-area ">
-            <div class="header-top_area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-8">
-                            <div class="short_contact_list">
-                                <ul>
-                                    <li><a href="#">+880 4664 216</a></li>
-                                    <li><a href="#">Mon - Sat 10:00 - 7:00</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-4 ">
-                            <div class="social_media_links">
-                                <a href="#">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-pinterest-p"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div id="sticky-header" class="main-header-area">
                 <div class="container">
                     <div class="row align-items-center">
@@ -78,9 +57,12 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a  href="index.html">home</a></li>
-                                        <li><a href="about.html">about</a></li>
-                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
+                                        <li><a  href="index.html">Главная</a></li>
+                                        <li><a href="about.html">О нас</a></li>
+                                        <li><a href="about.html">Животные</a></li>
+                                        <li><a href="about.html">Новости</a></li>
+                                        <li><a href="about.html">Профиль</a></li>
+                                        <!-- <li><a href="#">blog <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                                                 <li><a href="blog.html">blog</a></li>
                                                 <li><a href="single-blog.html">single-blog</a></li>
@@ -89,11 +71,11 @@
                                         <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                                                 <li><a href="elements.html">elements</a></li>
-                                                
+
                                             </ul>
                                         </li>
                                         <li><a href="service.html">services</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="contact.html">Contact</a></li> -->
                                     </ul>
                                 </nav>
                             </div>
@@ -112,11 +94,15 @@
         <div class="single_slider slider_bg_1 d-flex align-items-center">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-5 col-md-6">
+                    <div class="col-lg-7 col-md-7">
                         <div class="slider_text">
-                            <h3>We Care <br> <span>Your Pets</span></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit, sed do eiusmod.</p>
-                            <a href="contact.html" class="boxed-btn4">Contact Us</a>
+                            <h3>Мы помогаем <br> <span>Вашим питомцам</span></h3>
+
+                            <div class="btns_header_banner">
+                                <a href="contact.html" class="boxed-btn4">Я нашел</a>
+                                <a href="contact.html" class="boxed-btn4">Я потерял</a>
+                                <a href="contact.html" class="boxed-btn4">Передержка</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -184,31 +170,6 @@
     </div>
     <!-- service_area_end -->
 
-    <!-- pet_care_area_start  -->
-    <div class="pet_care_area">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5 col-md-6">
-                    <div class="pet_thumb">
-                        <img src="img/about/pet_care.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 offset-lg-1 col-md-6">
-                    <div class="pet_info">
-                        <div class="section_title">
-                            <h3><span>We care your pet </span> <br>
-                                As you care</h3>
-                            <p>Lorem ipsum dolor sit , consectetur adipiscing elit, sed do <br> iusmod tempor incididunt ut labore et dolore magna aliqua. <br> Quis ipsum suspendisse ultrices gravida. Risus commodo <br>
-                                viverra maecenas accumsan.</p>
-                            <a href="about.html" class="boxed-btn3">About Us</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- pet_care_area_end  -->
-
     <!-- adapt_area_start  -->
     <div class="adapt_area">
         <div class="container">
@@ -265,7 +226,21 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="textmonial_active owl-carousel">
-                        <div class="testmonial_wrap">
+                        <?php foreach($rows as $row): ?>
+                            <div class="testmonial_wrap">
+                                <div class="single_testmonial d-flex align-items-center">
+                                    <div class="test_thumb">
+                                        <img src="img/testmonial/1.png" alt="">
+                                    </div>
+                                    <div class="test_content">
+                                        <h4><?=$row['name']?></h4>
+                                        <span><?=$row['id']?></span>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                        <!-- <div class="testmonial_wrap">
                             <div class="single_testmonial d-flex align-items-center">
                                 <div class="test_thumb">
                                     <img src="img/testmonial/1.png" alt="">
@@ -288,19 +263,7 @@
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci.</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="testmonial_wrap">
-                            <div class="single_testmonial d-flex align-items-center">
-                                <div class="test_thumb">
-                                    <img src="img/testmonial/1.png" alt="">
-                                </div>
-                                <div class="test_content">
-                                    <h4>Jhon Walker</h4>
-                                    <span>Head of web design</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci.</p>
-                                </div>
-                            </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -308,62 +271,6 @@
         </div>
     </div>
     <!-- testmonial_area_end  -->
-
-    <!-- team_area_start  -->
-    <div class="team_area">
-        <div class="container">
-            <div class="row justify-content-center ">
-                <div class="col-lg-6 col-md-10">
-                    <div class="section_title text-center mb-95">
-                        <h3>Our Team</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_team">
-                        <div class="thumb">
-                            <img src="img/team/1.png" alt="">
-                        </div>
-                        <div class="member_name text-center">
-                            <div class="mamber_inner">
-                                <h4>Rala Emaia</h4>
-                                <p>Senior Director</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_team">
-                        <div class="thumb">
-                            <img src="img/team/2.png" alt="">
-                        </div>
-                        <div class="member_name text-center">
-                            <div class="mamber_inner">
-                                <h4>jhon Smith</h4>
-                                <p>Senior Director</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_team">
-                        <div class="thumb">
-                            <img src="img/team/3.png" alt="">
-                        </div>
-                        <div class="member_name text-center">
-                            <div class="mamber_inner">
-                                <h4>Rala Emaia</h4>
-                                <p>Senior Director</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- team_area_start  -->
 
     <div class="contact_anipat anipat_bg_1">
         <div class="container">
@@ -436,7 +343,7 @@
                                     <img src="img/logo.png" alt="">
                                 </a>
                             </div>
-                            <p class="address_text">239 E 5th St, New York 
+                            <p class="address_text">239 E 5th St, New York
                                 NY 10003, USA
                             </p>
                             <div class="socail_links">
