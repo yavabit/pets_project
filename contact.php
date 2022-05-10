@@ -28,86 +28,7 @@
 </head>
 
 <body>
-    <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
-
-    <!-- header_start  -->
-    <header>
-        <div class="header-area ">
-            <div class="header-top_area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-8">
-                            <div class="short_contact_list">
-                                <ul>
-                                    <li><a href="#">+880 4664 216</a></li>
-                                    <li><a href="#">Mon - Sat 10:00 - 7:00</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-4 ">
-                            <div class="social_media_links">
-                                <a href="#">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-pinterest-p"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="sticky-header" class="main-header-area">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-xl-3 col-lg-3">
-                            <div class="logo">
-                                <a href="index.html">
-                                    <img src="img/logo.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xl-9 col-lg-9">
-                            <div class="main-menu  d-none d-lg-block">
-                                <nav>
-                                    <ul id="navigation">
-                                        <li><a  href="index.html">home</a></li>
-                                        <li><a href="about.html">about</a></li>
-                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="single-blog.html">single-blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="elements.html">elements</a></li>
-                                                
-                                            </ul>
-                                        </li>
-                                        <li><a href="service.html">services</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- header_start  -->
+<?php require('components/header.php') ?>
 
     <!-- bradcam_area_start -->
     <div class="bradcam_area breadcam_bg">
@@ -164,10 +85,10 @@
                     </script>
                     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&amp;callback=initMap">
                     </script>
-    
+
                 </div>
-    
-    
+
+
                 <div class="row">
                     <div class="col-12">
                         <h2 class="contact-title">Get in Touch</h2>
@@ -228,7 +149,7 @@
             </div>
         </section>
     <!-- ================ contact section end ================= -->
-    
+
     <!-- footer_start  -->
     <footer class="footer">
         <div class="footer_top">
@@ -281,7 +202,7 @@
                                     <img src="img/logo.png" alt="">
                                 </a>
                             </div>
-                            <p class="address_text">239 E 5th St, New York 
+                            <p class="address_text">239 E 5th St, New York
                                 NY 10003, USA
                             </p>
                             <div class="socail_links">
@@ -330,7 +251,7 @@
         </div>
     </footer>
     <!-- footer_end  -->
-    
+
         <!-- JS here -->
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
         <script src="js/vendor/jquery-1.12.4.min.js"></script>
@@ -350,14 +271,14 @@
         <script src="js/jquery.magnific-popup.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/gijgo.min.js"></script>
-    
+
         <!--contact js-->
         <script src="js/contact.js"></script>
         <script src="js/jquery.ajaxchimp.min.js"></script>
         <script src="js/jquery.form.js"></script>
         <script src="js/jquery.validate.min.js"></script>
         <script src="js/mail-script.js"></script>
-    
+
         <script src="js/main.js"></script>
         <script>
         $('#datepicker').datepicker({
@@ -379,5 +300,5 @@
      });
         </script>
     </body>
-    
+
     </html>
