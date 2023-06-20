@@ -28,7 +28,7 @@
 </head>
 
 <body>
-<?php require('components/header.php') ?>
+<!-- ?php require('components/header.php') ?> -->
 
     <!-- bradcam_area_start -->
     <div class="bradcam_area breadcam_bg">
