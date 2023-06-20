@@ -45,6 +45,7 @@
 html {
     font-family: sans-serif;
     line-height: 1.15;
+    height: 10;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -ms-overflow-style: scrollbar;
@@ -177,14 +178,14 @@ sup {
 }
 
 a {
-    color: #007bff;
+    color: #000;
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects
 }
 
 a:hover {
-    color: #0056b3;
+    color: #F54C15;
     text-decoration: underline
 }
 
@@ -633,7 +634,7 @@ pre code {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-right: -15px;
-    margin-left: -15px
+    margin-left: -15px;
 }
 
 .no-gutters {
@@ -4062,7 +4063,9 @@ tbody.collapse.show {
 
 .nav-link {
     display: block;
-    padding: .5rem 1rem
+    padding: .5rem 1rem;
+    display: table; 
+    margin: 0 auto;
 }
 
 .nav-link:focus,
