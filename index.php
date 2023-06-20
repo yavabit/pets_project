@@ -177,20 +177,18 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="textmonial_active owl-carousel">
-                        <?php foreach($rows as $row): ?>
                             <div class="testmonial_wrap">
                                 <div class="single_testmonial d-flex align-items-center">
                                     <div class="test_thumb">
                                         <img src="img/testmonial/1.png" alt="">
                                     </div>
                                     <div class="test_content">
-                                        <h4><?=$row['name']?></h4>
-                                        <span><?=$row['id']?></span>
+                                        <h4>nn</h4>
+                                        <span>nn</span>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci.</p>
                                     </div>
                                 </div>
                             </div>
-                        <?php endforeach; ?>
                         <!-- <div class="testmonial_wrap">
                             <div class="single_testmonial d-flex align-items-center">
                                 <div class="test_thumb">
